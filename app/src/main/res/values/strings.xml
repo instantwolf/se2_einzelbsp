@@ -3,4 +3,5 @@
     <string name="enternumber_text">Gib deine MatrikelNummer ein</string>
     <string name="getResponse_description">Antwort vom Server</string>
     <string name="getResponse_labelText">Abschicken</string>
+    <string name="calculate">Berechnen</string>
 </resources>
