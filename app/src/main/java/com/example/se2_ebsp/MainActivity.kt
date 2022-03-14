@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity()  {
             index++
         }
 
-        val textView : TextView = findViewById(R.id.text_response)
        writeSomething(Integer.toBinaryString(sum))
 
     }
