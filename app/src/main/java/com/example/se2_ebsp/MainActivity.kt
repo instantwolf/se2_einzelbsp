@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.TextView
 import java.net.Socket
 import kotlinx.coroutines.*
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,10 +15,10 @@ class MainActivity : AppCompatActivity()  {
 
         val sendRequestBtn = findViewById<Button>(R.id.button_getResponse)
         sendRequestBtn.setOnClickListener {
-                   onClickSend()
+               onClickSend()
         }
         val calculateButton = findViewById<Button>(R.id.button_calculate)
-        sendRequestBtn.setOnClickListener {
+        calculateButton.setOnClickListener {
                 calculate()
         }
 
@@ -29,24 +28,20 @@ class MainActivity : AppCompatActivity()  {
     fun calculate(){
         val matrNrString = this.getMatrikelNr()
 
-        val matrNrInt = Integer.parseInt(matrNrString)
         var index = 0
-        var sum = 0;
+        var sum = 0
         while(index < matrNrString.length){
             sum += Integer.parseInt(matrNrString.get(index).toString())
             index++
         }
 
         val textView : TextView = findViewById(R.id.text_response)
-        textView.text = Integer.toBinaryString(sum);
+       writeSomething(Integer.toBinaryString(sum))
 
     }
 
      fun onClickSend() = runBlocking {
-
-
             createConnection()
-
     }
 
     fun getMatrikelNr():String{
